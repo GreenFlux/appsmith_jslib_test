@@ -1,69 +1,41 @@
-export default {
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['exports'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS
+    factory(exports);
+  } else {
+    // Browser globals
+    factory(root.myToolkit = {});
+  }
+}(typeof self !== 'undefined' ? self : this, function (exports) {
+  // Your module code here
 
-	stringToNum: (inputString) => [...inputString].reduce((acc, char) => (acc + char.charCodeAt(0)) % 46, 0),
-	colors: [
-  "#E50A7A",
-  "#EA0164",
-  "#ED004C",
-  "#EE092F",
-  "#ED1800",
-  "#EB2600",
-  "#E83300",
-  "#E24000",
-  "#DB4C00",
-  "#D25800",
-  "#C76300",
-  "#BA6D00",
-  "#AC7700",
-  "#9B8000",
-  "#888800",
-  "#719000",
-  "#549600",
-  "#259C00",
-  "#00A000",
-  "#00A423",
-  "#00A748",
-  "#00A863",
-  "#00A87B",
-  "#00A890",
-  "#00A6A5",
-  "#00A3B8",
-  "#009FC9",
-  "#009AD9",
-  "#0095E8",
-  "#008EF4",
-  "#0087FE",
-  "#007FFF",
-  "#0077FF",
-  "#316FFF",
-  "#5567FF",
-  "#6D5FFF",
-  "#8157FF",
-  "#9250FB",
-  "#A148F1",
-  "#AF41E4",
-  "#BB3AD6",
-  "#C632C6",
-  "#D029B5",
-  "#D820A2",
-  "#E0168F"
-],
+  // Define your functions and variables
+  function myFunction1() {
+    return 'function1!'
+  }
 
-	createColoredInitialsSVG(str=Input2.text) {
-		const color = this.colors[this.stringToNum(str)];
-		const backgroundColor = `${color}33`;
-		const initials = str.split(' ').map(word => word.charAt(0).toUpperCase()).join('');
+  function myFunction2(str) {
+    return `You entered ${str}`
+  }
 
-		const svg = `
-    <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50%" cy="50%" r="40%" fill="${backgroundColor}"  stroke="${color}" stroke-width="1px" />
-      <text x="50%" y="50%" text-anchor="middle" dy="0.3em" font-size="${(6 - initials.length)*8 }%" font-weight="bold" fill="${color}"  style="font-family: sans-serif;">
-        ${initials}
-      </text>
-    </svg>
-  `;
+  const myVariable1 = 'Value 1';
+  const myVariable2 = 42;
 
-		return `data:image/svg+xml;base64,${btoa(svg)}`;
-	}
+  // Export the functions and variables as a toolkit object
+  const toolkit = {
+    myFunction1,
+    myFunction2,
+    myVariable1,
+    myVariable2,
+  };
 
-}
+  // Attach the toolkit object to exports for CommonJS or the global object for the browser
+  if (typeof exports === 'object' && typeof module !== 'undefined') {
+    module.exports = toolkit;
+  } else {
+    exports.myToolkit = toolkit;
+  }
+}));
