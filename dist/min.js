@@ -1,4 +1,4 @@
-const svgTools = {
+export default {
 
 	stringToNum: (inputString) => [...inputString].reduce((acc, char) => (acc + char.charCodeAt(0)) % 46, 0),
 	colors: [
