@@ -18,4 +18,6 @@ const toolkit = {
   myVariable2,
 };
 
-export default { myFunction1, myFunction2, myVariable1, myVariable2, toolkit };
+export { myFunction1, myFunction2, myVariable1, myVariable2, toolkit };
+
+export default {}
