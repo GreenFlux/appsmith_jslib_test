@@ -1,7 +1,8 @@
 // Define your functions and variables
-function myFunction1() {
-  return 'function1!';
-}
+selectOptions : (data, label, value) => _.orderBy(_.uniqBy(data.map( obj => ({
+  label: _.get(obj, label),
+  value: _.get(obj, value)
+})).filter(obj => !!obj.label && !!obj.value), o => o.label), 'label')
 
 function myFunction2(str) {
   return `You entered ${str}`;
@@ -12,12 +13,10 @@ const myVariable2 = 42;
 
 // Export the functions and variables as a toolkit object
 const toolkit = {
-  myFunction1,
+  selectOptions,
   myFunction2,
   myVariable1,
-  myVariable2,
+  myVariable2
 };
 
-export { myFunction1, myFunction2, myVariable1, myVariable2, toolkit };
-
-export default {}
+export toolkit;
