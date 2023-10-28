@@ -19,4 +19,4 @@ const toolkit = {
   myVariable2
 };
 
-export {;
+export {toolkit};
