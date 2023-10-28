@@ -1,11 +1,15 @@
 // Define your functions and variables
-const selectOptions = (data, label, value) => _.orderBy(
+function selectOptions(data, label, value) {
+  return _.orderBy(
   _.uniqBy(data.map(obj => ({
     label: _.get(obj, label),
     value: _.get(obj, value)
-  })).filter(obj => !!obj.label && !!obj.value), o => o.label), 'label');
+  })).filter(obj => !!obj.label && !!obj.value), o => o.label), 'label')
+};
 
-const myFunction2 = (str) => `You entered ${str}`;
+myFunction2(str)  {
+  return `You entered ${str}`;
+                  };
 
 const myVariable1 = 'Value 1';
 const myVariable2 = 42;
