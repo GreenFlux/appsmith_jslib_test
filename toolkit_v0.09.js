@@ -1,5 +1,5 @@
 // Import Lodash as an ES6 module from a CDN
-import _ from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js';
+//import _ from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js';
 
 // Define your functions and variables
 function selectOptions(data, label, value) {
