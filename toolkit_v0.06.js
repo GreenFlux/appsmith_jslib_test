@@ -1,5 +1,5 @@
 // Import Lodash as an ES6 module from a CDN
-import _ from 'https://cdn.skypack.dev/lodash-es';
+import _ from 'https://cdn.skypack.dev/pin/lodash-es@v4.17.21-rDGl8YjBUjcrrAbjNrmo/mode=imports,min/optimized/lodash-es.jss';
 
 // Define your functions and variables
 function selectOptions(data, label, value) {
