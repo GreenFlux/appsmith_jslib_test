@@ -1,20 +1,20 @@
 // Import Lodash as an ES6 module from a CDN
-//import _ from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js';
+import lodash from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js';
 
 // Define your functions and variables
 function selectOptions(data, label, value) {
-  return _.orderBy(
-    _.uniqBy(data.map(obj => ({
-      label: _.get(obj, label),
-      value: _.get(obj, value)
+  return lodash.orderBy(
+    lodash.uniqBy(data.map(obj => ({
+      label: lodash.get(obj, label),
+      value: lodash.get(obj, value)
     })).filter(obj => !!obj.label && !!obj.value), o => o.label), 'label');
 }
 
-// New function that uses Lodash
-function myFunctionWithLodash(arr) {
-  // Example Lodash operation - Sort the array
-  return _.sortBy(arr);
-}
+// // New function that uses Lodash
+// function myFunctionWithLodash(arr) {
+//   // Example Lodash operation - Sort the array
+//   return _.sortBy(arr);
+// }
 
 const myVariable1 = 'Value 1';
 const myVariable2 = 42;
