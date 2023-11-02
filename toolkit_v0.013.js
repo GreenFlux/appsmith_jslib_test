@@ -1,5 +1,5 @@
 // Import Lodash as an ES6 module from a CDN
-import faker from 'https://cdn.jsdelivr.net/npm/@faker-js/faker@8.2.0/+esm';
+import faker from 'https://cdn.jsdelivr.net/gh/GreenFlux/appsmith_jslib_test@main/toolkit_v0.012.js';
 
 //check that faker imported as part of this module
 checkFaker(){
