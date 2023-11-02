@@ -28,3 +28,5 @@ const toolkit = {
 };
 
 export { toolkit };
+
+export default {}
