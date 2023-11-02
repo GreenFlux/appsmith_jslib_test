@@ -1,5 +1,10 @@
 // Import Lodash as an ES6 module from a CDN
-//import lodash from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js';
+import faker from 'https://cdn.jsdelivr.net/npm/@faker-js/faker@8.2.0/+esm';
+
+//check that faker imported as part of this module
+checkFaker(){
+		return faker.date.future(1)
+	}
 
 // Define your functions and variables
 function selectOptions(data, label, value) {
@@ -21,6 +26,7 @@ const myVariable2 = 42;
 
 // Export the functions and variables as a toolkit object
 const toolkit = {
+  checkFaker,
   selectOptions,
   myFunctionWithLodash, // Add the new function
   myVariable1,
