@@ -3,7 +3,7 @@
 
 //check that faker imported as part of this module
 function checkFaker(){
-		return faker.date.future(1)
+		return faker.simpleFaker.date.future(3)
 	}
 
 // Define your functions and variables
