@@ -1,5 +1,5 @@
 // Import Lodash as an ES6 module from a CDN
-import faker from 'https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js';
+const faker = require ('https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js');
 
 //check that faker imported as part of this module
 function checkFaker(){
